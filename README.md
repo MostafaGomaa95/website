@@ -68,8 +68,16 @@ The portfolio was designed as A4 landscape drawing sheets. That character is pre
 - **Mobile (below 900 px)** — absolute positioning is switched off and content stacks.
   During the build, each sheet's elements were sorted by their `top` / `left` position,
   so the stacked reading order matches the original visual order.
+- **Between sheets** — a band in the deeper paper tone with a short graphite mark at the
+  left edge, the way two sheets of a drawing set sit next to each other. Adjust its height
+  with the `--sep` variable in `css/style.css`.
+- **Title block** — on screen the Schriftfeld leaves the sheet and becomes a fixed bar at the
+  bottom of the viewport. It appears from sheet 02 onward, its sheet number follows the sheet
+  you are reading, and it fades out after 2.5 seconds without scrolling. Change that delay with
+  `IDLE_MS` in `js/app.js`. In print the bar is hidden and each sheet carries its own title
+  block again, exactly as in the PDF.
 - **Print** — `Ctrl/Cmd + P` produces the original 17-page A4 landscape set.
-  Navigation, language switcher, progress bar and footer are hidden.
+  Navigation, language switcher, progress bar and the sheet separators are hidden.
 
 ---
 

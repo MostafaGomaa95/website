@@ -192,7 +192,7 @@ tr.hi td{color:var(--signalt);font-weight:500}
 :root{
   --sheet-w: 1122.52px;          /* 297 mm bei 96 dpi */
   --s: 1;                         /* Skalierung, von app.js gesetzt */
-  --bar-h: 52px;
+  --bar-h: 64px;
   --maxw: 1480px;
 }
 
@@ -218,48 +218,48 @@ body{margin:0;background:var(--papier);color:var(--tinte);font-family:var(--int)
 
 /* ---------------- Kopfleiste ---------------- */
 .topbar{position:sticky;top:0;z-index:110;height:var(--bar-h);
-  display:flex;align-items:center;gap:24px;
+  display:flex;align-items:center;gap:28px;
   padding:0 clamp(14px,3vw,34px);
   background:rgba(250,250,248,.92);backdrop-filter:saturate(150%) blur(8px);
   border-bottom:1px solid var(--g20)}
 .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none;color:inherit;flex:0 0 auto}
-.brand-name{font-family:var(--arc);font-weight:500;font-size:15px;letter-spacing:-.02em}
-.brand-role{font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;
+.brand-name{font-family:var(--arc);font-weight:500;font-size: 1.125rem;letter-spacing:-.02em}
+.brand-role{font-family:var(--mono);font-size:  0.875rem;letter-spacing:.12em;text-transform:uppercase;
   color:var(--g50)}
 .mainnav{flex:1 1 auto;min-width:0}
-.mainnav ul{display:flex;flex-wrap:nowrap;gap:clamp(10px,1.5vw,22px);list-style:none;margin:0;padding:0;
+.mainnav ul{display:flex;flex-wrap:nowrap;; gap:clamp(12px,1.7vw,26px);list-style:none;margin:0;padding:0;
   justify-content:flex-end;overflow:hidden}
-.mainnav a{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--g50);text-decoration:none;white-space:nowrap;padding:4px 0;
+.mainnav a{font-family:var(--mono);font-size: 1rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--g50);text-decoration:none;white-space:nowrap;padding:6px 0;
   border-bottom:1px solid transparent;transition:color .18s,border-color .18s}
 .mainnav a:hover{color:var(--tinte)}
 .mainnav a[aria-current="true"]{color:var(--tinte);border-bottom-color:var(--signal)}
 
 .lang{display:flex;align-items:center;gap:6px;flex:0 0 auto}
-.lang-btn{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;background:none;border:0;
-  padding:4px 2px;cursor:pointer;color:var(--g50);border-bottom:1px solid transparent;
+.lang-btn{font-family:var(--mono);font-size:12px;letter-spacing:.1em;background:none;border:0;
+  padding:6px 3px;cursor:pointer;color:var(--g50);border-bottom:1px solid transparent;
   transition:color .18s,border-color .18s}
 .lang-btn:hover{color:var(--tinte)}
 .lang-btn[aria-pressed="true"]{color:var(--tinte);border-bottom-color:var(--signal)}
-.lang-sep{color:var(--g20);font-size:10px}
+.lang-sep{color:var(--g20);font-size:11.5px}
 
-.navtoggle{display:none;width:34px;height:30px;background:none;border:0;cursor:pointer;
+.navtoggle{display:none;width:40px;height:36px;background:none;border:0;cursor:pointer;
   padding:0;flex-direction:column;justify-content:center;gap:6px;flex:0 0 auto}
-.navtoggle-bar{display:block;height:1.5px;width:22px;background:var(--tinte);transition:transform .2s}
+.navtoggle-bar{display:block;height:1.5px;width:26px;background:var(--tinte);transition:transform .2s}
 .navtoggle[aria-expanded="true"] .navtoggle-bar:first-child{transform:translateY(3.75px) rotate(45deg)}
 .navtoggle[aria-expanded="true"] .navtoggle-bar:last-child{transform:translateY(-3.75px) rotate(-45deg)}
 
 .mobilenav{position:sticky;top:var(--bar-h);z-index:105;background:var(--papier);
   border-bottom:1px solid var(--g20);padding:10px clamp(14px,4vw,28px) 18px}
 .mobilenav ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
-.mobilenav a{display:block;padding:9px 0;font-family:var(--mono);font-size:10.5px;
+.mobilenav a{display:block;padding:12px 0;font-family:var(--mono);font-size:12px;
   letter-spacing:.1em;text-transform:uppercase;color:var(--g60);text-decoration:none;
   border-bottom:1px solid var(--g08)}
 .mobilenav a:hover{color:var(--tinte)}
 
 /* ---------------- Blatt-Rahmen ---------------- */
 main{display:block}
-.sheet{background:var(--papier);border-bottom:1px solid var(--g08)}
+.sheet{background:var(--papier);position:relative}
 .sheet.dark{background:var(--tinte)}
 .sheet-scale{position:relative;width:100%;max-width:var(--maxw);margin:0 auto;
   height:calc(210mm * var(--s));overflow:hidden}
@@ -271,19 +271,13 @@ main{display:block}
 .sheet{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
 .sheet.is-in,.sheet:first-of-type{opacity:1;transform:none}
 
-/* ---------------- Fusszeile ---------------- */
-.sitefoot{background:var(--papier);border-top:1px solid var(--g20);padding:34px 0 44px}
-.foot-inner{max-width:var(--maxw);margin:0 auto;padding:0 clamp(16px,4vw,34px);
-  display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;align-items:baseline}
-.foot-note,.foot-copy{font-family:var(--mono);font-size:9px;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--g50);margin:0;line-height:1.7}
 
 /* ================================================================
    TABLET
    ================================================================ */
 @media (max-width:1180px){
-  .mainnav ul{gap:10px}
-  .mainnav a{font-size:8.5px}
+  .mainnav ul{gap:12px}
+  .mainnav a{font-size:9.5px}
 }
 @media (max-width:1024px){
   .mainnav{display:none}
@@ -296,7 +290,6 @@ main{display:block}
    dadurch stimmt die Lesereihenfolge.
    ================================================================ */
 @media (max-width:899px){
-  .sheet{border-bottom:1px solid var(--g20)}
   .sheet-scale{height:auto!important;overflow:visible;max-width:none}
   .sheet-page{position:static!important;width:100%!important;height:auto!important;
     transform:none!important;padding:38px clamp(18px,5.5vw,30px) 30px}
@@ -400,7 +393,7 @@ main{display:block}
 @page{size:297mm 210mm;margin:0}
 @media print{
   html,body{background:#fff}
-  .topbar,.mobilenav,.progress,.skip,.sitefoot,.navtoggle{display:none!important}
+  .topbar,.mobilenav,.progress,.skip,.navtoggle{display:none!important}
   main{margin:0}
   .sheet{opacity:1!important;transform:none!important;border:0!important;background:transparent!important}
   .sheet-scale{height:210mm!important;max-width:none;overflow:hidden}
@@ -430,3 +423,69 @@ main{display:block}
 }
 /* Zeitstrahl-Punkte auf kleinen Schirmen ausblenden (Achse entfaellt dort) */
 @media (max-width:899px){ .tp,.tv{display:none!important} }
+
+/* ---------------- Blatttrennung ----------------
+   Zwischen den Blaettern liegt ein Band im tieferen Papierton mit einer
+   kurzen Marke am linken Rand — wie die Trennung zwischen zwei Blaettern
+   eines Plansatzes. Ersetzt die frühere Fusszeile. */
+:root{ --sep: 30px }
+main{background:var(--tief)}
+.sheet + .sheet{margin-top:var(--sep)}
+.sheet + .sheet::before{
+  content:"";position:absolute;top:calc(var(--sep) * -1);left:0;right:0;height:var(--sep);
+  background:var(--tief);pointer-events:none}
+.sheet + .sheet::after{
+  content:"";position:absolute;top:calc(var(--sep) / -2 - 1px);
+  left:clamp(16px,4vw,34px);width:34px;height:2px;background:var(--g40);pointer-events:none}
+main > .sheet:last-of-type{margin-bottom:var(--sep)}
+
+@media (max-width:899px){ :root{ --sep: 22px } }
+
+@media print{
+  main{background:transparent}
+  .sheet + .sheet{margin-top:0}
+  .sheet + .sheet::before,.sheet + .sheet::after{display:none}
+  main > .sheet:last-of-type{margin-bottom:0}
+}
+
+/* ---------------- Schwebendes Schriftfeld ----------------
+   Ersetzt am Bildschirm das Schriftfeld im Blatt. Erscheint ab Blatt 02,
+   blendet sich nach kurzer Ruhe aus und kehrt beim Scrollen zurueck.
+   Im Druck gilt wieder das Schriftfeld im Blatt. */
+.sfbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:115;
+  background:rgba(250,250,248,.94);
+  -webkit-backdrop-filter:saturate(150%) blur(8px);
+  backdrop-filter:saturate(150%) blur(8px);
+  border-top:1px solid var(--g20);
+  transform:translateY(101%);opacity:0;pointer-events:none;
+  transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .3s ease}
+.sfbar.is-on{transform:none;opacity:1}
+.sfbar-in{max-width:var(--maxw);margin:0 auto;
+  padding:7px clamp(16px,4vw,34px) 8px;
+  display:flex;align-items:baseline;gap:clamp(16px,3.4vw,44px)}
+.sfbar-f{display:flex;flex-direction:column;gap:2px;min-width:0}
+.sfbar-sheet{margin-left:auto;text-align:right;align-items:flex-end}
+.sfbar-k{font-family:var(--mono);font-weight:400;font-size:8px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--g50);line-height:1}
+.sfbar-v{font-family:var(--mono);font-weight:500;font-size:10px;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--g80);line-height:1;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#sfbarNo{color:var(--signalt)}
+
+/* Am Bildschirm traegt die Leiste das Schriftfeld, nicht mehr das Blatt */
+@media screen{ .sheet-page .sf{display:none} }
+
+@media (max-width:640px){
+  .sfbar-wide{display:none}
+  .sfbar-in{padding:6px 16px 7px}
+  .sfbar-v{font-size:9.5px}
+}
+@media (prefers-reduced-motion:reduce){
+  .sfbar{transition:opacity .001ms}
+  .sfbar:not(.is-on){transform:none;visibility:hidden}
+}
+@media print{
+  .sfbar{display:none!important}
+  .sheet-page .sf{display:block!important}
+}

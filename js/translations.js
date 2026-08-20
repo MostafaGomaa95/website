@@ -332,11 +332,14 @@ window.I18N = {
     "skip": "Zum Inhalt springen",
     "menu": "Menü",
     "brand_role": "BIM-Koordinator TGA",
-    "foot_note": "Alle Projektangaben anonymisiert · Abbildungen aus laufenden Projekten, vertrauliche Angaben geschwärzt",
     "c_phone": "Telefon",
     "c_mail": "E-Mail",
     "c_loc": "Standort",
-    "c_country": "Deutschland"
+    "c_country": "Deutschland",
+    "sf_name": "Name",
+    "sf_disc": "Fachbereich",
+    "sf_loc": "Ort",
+    "sf_sheet": "Blatt"
   },
   "en": {
     "t001": "BIM Coordinator MEP",
@@ -656,10 +659,13 @@ window.I18N = {
     "skip": "Skip to content",
     "menu": "Menu",
     "brand_role": "BIM Coordinator MEP",
-    "foot_note": "All project references anonymised · Images from live projects, confidential information redacted",
     "c_phone": "Phone",
     "c_mail": "Email",
     "c_loc": "Location",
-    "c_country": "Germany"
+    "c_country": "Germany",
+    "sf_name": "Name",
+    "sf_disc": "Discipline",
+    "sf_loc": "Location",
+    "sf_sheet": "Sheet"
   }
 };

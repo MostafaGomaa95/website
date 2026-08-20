@@ -102,6 +102,48 @@
     document.documentElement.style.setProperty('--s', String(Math.round(s * 10000) / 10000));
   }
 
+
+  /* ---------------- Schwebendes Schriftfeld ----------------
+     Sichtbar ab Blatt 02. Blendet nach IDLE_MS ohne Scrollen aus
+     und kehrt bei der naechsten Scrollbewegung zurueck. */
+  var IDLE_MS = 2500;
+  var bar, barNo, idleTimer, currentSheet = 1;
+
+  function setSheet(n) {
+    if (!n || n === currentSheet) return;
+    currentSheet = n;
+    if (barNo) barNo.textContent = n < 10 ? '0' + n : String(n);
+    if (n <= 1) hideBar();
+  }
+
+  function showBar() {
+    if (!bar || currentSheet <= 1) return;
+    if (!bar.classList.contains('is-on')) {        // DOM nur bei Zustandswechsel anfassen
+      bar.classList.add('is-on');
+      bar.setAttribute('aria-hidden', 'false');
+    }
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(hideBar, IDLE_MS);
+  }
+
+  function hideBar() {
+    if (!bar || !bar.classList.contains('is-on')) { clearTimeout(idleTimer); return; }
+    clearTimeout(idleTimer);
+    bar.classList.remove('is-on');
+    bar.setAttribute('aria-hidden', 'true');
+  }
+
+  function initSheetBar() {
+    bar = document.getElementById('sfbar');
+    barNo = document.getElementById('sfbarNo');
+    if (!bar) return;
+    window.addEventListener('scroll', showBar, { passive: true });
+    // Beim Verlassen des Fensters ausblenden
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) hideBar();
+    });
+  }
+
   /* ---------------- Fortschritt und aktiver Navipunkt ---------------- */
   function initProgress() {
     var bar = document.getElementById('progressBar');
@@ -135,6 +177,7 @@
     }, { rootMargin: '0px 0px -12% 0px', threshold: 0.04 });
     document.querySelectorAll('.sheet').forEach(function (s) { reveal.observe(s); });
 
+    var sheets = Array.prototype.slice.call(document.querySelectorAll('.sheet[id]'));
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (!e.isIntersecting) return;
@@ -143,9 +186,10 @@
           a.setAttribute('aria-current',
             a.getAttribute('href') === '#' + id ? 'true' : 'false');
         });
+        setSheet(sheets.indexOf(e.target) + 1);
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    document.querySelectorAll('.sheet[id]').forEach(function (s) { spy.observe(s); });
+    sheets.forEach(function (s) { spy.observe(s); });
   }
 
   /* ---------------- Mobile Navigation ---------------- */
@@ -177,10 +221,8 @@
       b.addEventListener('click', function () { chooseLang(b.dataset.lang); });
     });
 
-    var y = document.getElementById('year');
-    if (y) y.textContent = String(new Date().getFullYear());
-
     rescale();
+    initSheetBar();
     initProgress();
     initObservers();
     initMobileNav();
