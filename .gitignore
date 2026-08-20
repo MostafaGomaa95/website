@@ -1,0 +1,19 @@
+# Betriebssystem
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editoren
+.vscode/
+.idea/
+*.swp
+*~
+
+# Abhaengigkeiten / Build (aktuell nicht verwendet)
+node_modules/
+dist/
+.cache/
+
+# Lokale Dateien
+*.log
+.env

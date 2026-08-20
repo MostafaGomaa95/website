@@ -1,0 +1,11 @@
+{
+  "name": "Mostafa Gomaa — BIM Coordinator MEP",
+  "short_name": "M. Gomaa",
+  "description": "Portfolio: BIM coordination, model QA/QC, BIM standards, ACC and Revit automation.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#FAFAF8",
+  "theme_color": "#0E0F11",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
