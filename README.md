@@ -15,7 +15,7 @@ Designed to be linked directly from a CV and to load fast on first visit.
 |---|---|
 | `index.html` | The complete portfolio — 17 sheets, one shared layout |
 | `css/style.css` | Design system + web layer (navigation, responsive, print) |
-| `js/translations.js` | All German and English strings, plus per-language metadata |
+| `js/translations.js` | Page title and meta description per language |
 | `js/app.js` | Language switching, sheet scaling, navigation, scroll progress |
 | `assets/` | Images and self-hosted fonts |
 | `404.html` | Styled not-found page |
@@ -41,20 +41,37 @@ so the current view can be copied and shared.
 
 ### Editing text
 
-All strings live in `js/translations.js`:
+**Both languages sit on the same line in `index.html`.** There is no separate
+translation file to keep in sync.
 
-```js
-window.I18N = {
-  de: { t001: "Profil", ... },
-  en: { t001: "Profile", ... }
-};
+```html
+<span data-en="Arabic (native) · English (fluent) · German (B2)">Arabisch (Muttersprache) · Deutsch · Englisch</span>
+               ^ English                                          ^ German
 ```
 
-Each key matches a `data-i18n="t001"` attribute in `index.html`.
-Image alt texts use `data-i18n-alt`. Page titles and descriptions live in `window.META`.
+- **German** is the text inside the element.
+- **English** is the `data-en` attribute.
+- For images: `alt="German"` and `data-en-alt="English"`.
 
-Numbers, discipline codes and contact details are **not** translated — they appear once
-as literal text in `index.html`.
+Edit either one, save, refresh. `js/translations.js` now only holds the page title and
+meta description per language.
+
+**Three rules:**
+
+1. Keep the `data-en="…"` attribute. Delete it and that text stops switching language.
+2. Write plain text, not HTML entities. Use `&` not `&amp;`, a real soft hyphen (U+00AD)
+   not `&shy;`. Entities appear literally in the text.
+3. Inside `data-en="…"` you cannot use a straight double quote `"`. Use a typographic
+   quote `“ ”` or an apostrophe `’` instead.
+
+**If an edit does not appear:** check which language is active — the DE | EN switch shows
+it. A German edit is invisible while the page is in English, and vice versa. Your choice is
+remembered in `localStorage`, so it survives reloads. Force a language with `?lang=de` or
+`?lang=en`, and hard-refresh with `Ctrl+F5` / `Cmd+Shift+R`.
+
+
+Numbers, discipline codes and contact details carry no `data-en` attribute — they are
+identical in both languages and appear once as literal text.
 
 ---
 

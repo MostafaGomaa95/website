@@ -361,14 +361,6 @@ main{display:block}
   .po .pv{font-size:11pt!important}
   .po .pk{font-size:8.5pt!important}
 
-  /* Schriftfeld wird zur Blattfusszeile */
-  .sheet-page .sf{position:static!important;left:auto!important;right:auto!important;
-    bottom:auto!important;height:auto!important;margin-top:12px;padding-top:10px;
-    display:flex!important;flex-wrap:wrap;gap:4px 20px}
-  .sheet-page .sf > div{position:static!important;left:auto!important;top:auto!important;
-    right:auto!important;text-align:left!important}
-  .sheet-page .sf .k{font-size:7.5pt!important}
-  .sheet-page .sf .v{font-size:8.5pt!important}
 }
 
 @media (max-width:520px){
@@ -474,7 +466,7 @@ main > .sheet:last-of-type{margin-bottom:var(--sep)}
 #sfbarNo{color:var(--signalt)}
 
 /* Am Bildschirm traegt die Leiste das Schriftfeld, nicht mehr das Blatt */
-@media screen{ .sheet-page .sf{display:none} }
+@media screen{ .sheet-page .sf{display:none!important} }
 
 @media (max-width:640px){
   .sfbar-wide{display:none}

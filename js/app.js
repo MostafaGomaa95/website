@@ -35,40 +35,57 @@
     return fromUrl() || fromStorage() || fromBrowser() || 'en';
   }
 
-  /* ---------------- Sprache anwenden ---------------- */
+
+  /* ---------------- Text kommt vollstaendig aus index.html ----------------
+     Deutsch  = der Text, der im Element steht
+     Englisch = das Attribut data-en (bei Bildern data-en-alt)
+     Beim Laden wird der deutsche Text einmal gesichert, damit der Wechsel
+     zurueck nach DE ihn wiederherstellen kann. */
+  var DE = new WeakMap();
+  var DE_ALT = new WeakMap();
+
+  function captureBaseline() {
+    document.querySelectorAll('[data-en]').forEach(function (el) {
+      DE.set(el, el.textContent);
+    });
+    document.querySelectorAll('[data-en-alt]').forEach(function (el) {
+      DE_ALT.set(el, el.getAttribute('alt') || '');
+    });
+  }
+
   function setMeta(name, value, attr) {
     var el = document.querySelector('meta[' + (attr || 'name') + '="' + name + '"]');
     if (el) el.setAttribute('content', value);
   }
 
   function applyLang(lang, pushUrl) {
-    var dict = window.I18N[lang] || {};
-    var meta = window.META[lang] || {};
+    var en = lang === 'en';
+    var meta = (window.META && window.META[lang]) || {};
 
     document.documentElement.setAttribute('lang', lang);
 
-    document.querySelectorAll('[data-i18n]').forEach(function (el) {
-      var v = dict[el.getAttribute('data-i18n')];
+    document.querySelectorAll('[data-en]').forEach(function (el) {
+      var v = en ? el.getAttribute('data-en') : DE.get(el);
       if (v != null) el.textContent = v;
     });
-    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
-      var v = dict[el.getAttribute('data-i18n-alt')];
+    document.querySelectorAll('[data-en-alt]').forEach(function (el) {
+      var v = en ? el.getAttribute('data-en-alt') : DE_ALT.get(el);
       if (v != null) el.setAttribute('alt', v);
     });
 
-    if (meta.title) document.title = meta.title;
+    if (meta.title) {
+      document.title = meta.title;
+      setMeta('twitter:title', meta.title);
+      setMeta('og:title', meta.title, 'property');
+    }
     if (meta.desc) {
       setMeta('description', meta.desc);
       setMeta('twitter:description', meta.desc);
       setMeta('og:description', meta.desc, 'property');
     }
-    if (meta.title) {
-      setMeta('twitter:title', meta.title);
-      setMeta('og:title', meta.title, 'property');
-    }
     if (meta.locale) {
       setMeta('og:locale', meta.locale, 'property');
-      setMeta('og:locale:alternate', lang === 'de' ? 'en_GB' : 'de_DE', 'property');
+      setMeta('og:locale:alternate', en ? 'de_DE' : 'en_GB', 'property');
     }
 
     document.querySelectorAll('.lang-btn').forEach(function (b) {
@@ -215,6 +232,7 @@
 
   /* ---------------- Start ---------------- */
   function ready() {
+    captureBaseline();          // muss vor der ersten Uebersetzung laufen
     applyLang(initialLang(), false);
 
     document.querySelectorAll('.lang-btn').forEach(function (b) {
