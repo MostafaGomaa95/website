@@ -29,7 +29,7 @@
 
 <link rel="preload" href="assets/fonts/archivo-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/style.css?v=8">
 </head>
 <body>
 
@@ -50,10 +50,10 @@
         <li><a href="#coordination" data-en="Coordination">Koordination</a></li>
         <li><a href="#clash" data-en="Clash Management">Kollisionsprüfung</a></li>
         <li><a href="#cde" data-en="CDE">CDE</a></li>
+        <li><a href="#automation" data-en="Automation">Automatisierung</a></li>
         <li><a href="#standard" data-en="BIM Standard">BIM-Standard</a></li>
         <li><a href="#template" data-en="Template &amp; Library">Vorlage & Bibliothek</a></li>
         <li><a href="#families" data-en="Parametric Families">Familien</a></li>
-        <li><a href="#automation" data-en="Automation">Automatisierung</a></li>
         <li><a href="#contact" data-en="Contact">Kontakt</a></li>
     </ul>
   </nav>
@@ -77,10 +77,10 @@
         <li><a href="#coordination" data-en="Coordination">Koordination</a></li>
         <li><a href="#clash" data-en="Clash Management">Kollisionsprüfung</a></li>
         <li><a href="#cde" data-en="CDE">CDE</a></li>
+        <li><a href="#automation" data-en="Automation">Automatisierung</a></li>
         <li><a href="#standard" data-en="BIM Standard">BIM-Standard</a></li>
         <li><a href="#template" data-en="Template &amp; Library">Vorlage & Bibliothek</a></li>
         <li><a href="#families" data-en="Parametric Families">Familien</a></li>
-        <li><a href="#automation" data-en="Automation">Automatisierung</a></li>
         <li><a href="#contact" data-en="Contact">Kontakt</a></li>
   </ul>
 </nav>
@@ -440,10 +440,176 @@
     </div></div>
   </section>
 
+  <section id="automation" class="sheet dark" aria-labelledby="automation-h">
+    <div class="sheet-scale"><div class="sheet-page">
+      <div class="la">
+        <div class="akt" style="position:absolute;top:-8mm;left:0"><i></i><span data-en="Act 04 — Automation">Akt 04 — Automatisierung</span></div>
+        <h1 id="automation-h" style="position:absolute;top:0;left:0;color:#FAFAF8"><span data-en="Automation — Tools">Automatisierung — Werkzeuge</span></h1>
+        <div class="ov" style="left:0;top:17mm;width:261mm"><div class="h2" style="max-width:230mm;color:#FAFAF8;font-size:11.5pt"><span data-en="Practical Revit tools built around repetitive BIM production and coordination tasks.">Praxisnahe Revit-Werkzeuge für wiederkehrende Aufgaben in der BIM-Produktion und Koordination.</span></div></div>
+
+        <div class="showcase" role="region" aria-label="Automatisierungswerkzeuge" data-en-aria-label="Automation tools">
+          <div class="showcase-media">
+            <video id="toolVideo" controls playsinline muted preload="metadata" poster="assets/videos/posters/01-connector-compass.webp" aria-describedby="tool-video-caption">
+              <source src="assets/videos/01-connector-compass.mp4" type="video/mp4">
+              <span data-en="Your browser cannot play this video.">Ihr Browser kann dieses Video nicht abspielen.</span>
+            </video>
+            <div id="toolUnavailable" class="showcase-unavailable" hidden><span class="code" data-en="Recording to follow">Aufnahme folgt</span></div>
+            <span id="tool-video-caption" class="sr-only" data-en="Screen recording of the selected automation tool, without sound">Bildschirmaufnahme des ausgewählten Automatisierungswerkzeugs, ohne Ton</span>
+          </div>
+          <div class="showcase-info" aria-live="polite" aria-atomic="true">
+            <article class="tool-detail" data-tool="0">
+              <div class="tool-count">01 / 08</div><h2>CONNECTOR COMPASS</h2>
+              <div class="tool-category" data-en="Pipe and fitting operations">Rohr- und Formteiloperationen</div>
+              <dl class="tool-facts">
+                <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Connecting open connectors, adding elbows and aligning pipes takes many single clicks in Revit.">Offene Anschlüsse verbinden, Bögen setzen und Rohre ausrichten kostet in Revit viele Einzelklicks.</dd>
+                <dt data-en="Solution">Lösung</dt><dd data-en="Creates pipes from open connectors, adds elbows, rotates elements in fixed angle steps and aligns pipes perpendicular.">Erzeugt Rohre aus offenen Anschlüssen, setzt Bögen, dreht Bauteile in festen Winkelschritten und richtet Rohre rechtwinklig aus.</dd>
+              </dl>
+              <div class="tool-tags"><span>Revit</span><span>MEP</span><span data-en="Automation">Automatisierung</span></div>
+            </article>
+            <article class="tool-detail" data-tool="1" hidden>
+              <div class="tool-count">02 / 08</div><h2>INO SHEETS</h2>
+              <div class="tool-category" data-en="Sheet creation">Planerstellung</div>
+              <dl class="tool-facts">
+                <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Sheet lists with hundreds of sheets are created and numbered one by one in Revit.">Planlisten mit hunderten Blättern werden in Revit einzeln angelegt und nummeriert.</dd>
+                <dt data-en="Solution">Lösung</dt><dd data-en="Reads the sheet list from Excel, maps columns to sheet parameters and creates or duplicates all sheets in one run.">Liest die Planliste aus Excel, ordnet Spalten den Planparametern zu und erzeugt oder dupliziert alle Pläne in einem Lauf.</dd>
+              </dl>
+              <div class="tool-tags"><span>Revit</span><span>Excel</span><span data-en="Automation">Automatisierung</span></div>
+            </article>
+            <article class="tool-detail" data-tool="2" hidden>
+              <div class="tool-count">03 / 08</div><h2>WORKSETS SETTER</h2>
+              <div class="tool-category" data-en="Workset assignment">Workset-Zuordnung</div>
+              <dl class="tool-facts">
+                <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Elements are moved into worksets by hand — error-prone in large models.">Bauteile werden von Hand in Worksets verschoben — fehleranfällig in großen Modellen.</dd>
+                <dt data-en="Solution">Lösung</dt><dd data-en="Defines filter rules per category and parameter value, assigns the workset and exports the rules for reuse.">Definiert Filterregeln je Kategorie und Parameterwert, weist das Workset zu und exportiert die Regeln zur Wiederverwendung.</dd>
+              </dl>
+              <div class="tool-tags"><span>Revit</span><span>BIM</span><span data-en="Automation">Automatisierung</span></div>
+            </article>
+            <article class="tool-detail" data-tool="3" hidden>
+              <div class="tool-count">04 / 08</div><h2>INO SHARED2PROJECT</h2>
+              <div class="tool-category" data-en="Parameter transfer">Parameterübertragung</div>
+              <dl class="tool-facts">
+                <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Adding shared parameters one by one as project parameters takes time and causes drift between projects.">Shared Parameters einzeln als Projektparameter anzulegen dauert und führt zu Abweichungen zwischen Projekten.</dd>
+                <dt data-en="Solution">Lösung</dt><dd data-en="Loads the shared parameter file, takes whole groups as instance or type parameters and binds them to categories.">Lädt die Shared-Parameter-Datei, übernimmt ganze Gruppen als Exemplar- oder Typparameter und ordnet sie den Kategorien zu.</dd>
+              </dl>
+              <div class="tool-tags"><span>Revit</span><span>BIM</span><span data-en="Automation">Automatisierung</span></div>
+            </article>
+            <article class="tool-detail" data-tool="4" hidden>
+              <div class="tool-count">05 / 08</div><h2>PUBLISH SETTINGS</h2>
+              <div class="tool-category" data-en="Release sets">Freigabesets</div>
+              <dl class="tool-facts">
+                <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Views and sheets for cloud publishing are picked by hand in Revit.">Für die Cloud-Veröffentlichung werden Ansichten und Pläne in Revit von Hand ausgewählt.</dd>
+                <dt data-en="Solution">Lösung</dt><dd data-en="Stores release sets per discipline with rules by view type and writes them straight into the Revit publish settings.">Speichert Freigabesets je Gewerk mit Regeln nach Ansichtstyp und überträgt sie direkt in die Revit-Veröffentlichungseinstellungen.</dd>
+              </dl>
+              <div class="tool-tags"><span>Revit</span><span>ACC</span><span data-en="Automation">Automatisierung</span></div>
+            </article>
+            <article class="tool-detail" data-tool="5" hidden>
+              <div class="tool-count">06 / 08</div><h2>INO CADVERTER</h2>
+              <div class="tool-category" data-en="CAD to Revit">CAD zu Revit</div>
+              <dl class="tool-facts">
+                <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Luminaires and symbols from 2D CAD drawings are remodelled piece by piece in Revit.">Leuchten und Symbole aus 2D-CAD-Plänen werden in Revit Stück für Stück nachmodelliert.</dd>
+                <dt data-en="Solution">Lösung</dt><dd data-en="Reads the layers of a CAD file, maps each layer to a family type and places every block as a Revit family.">Liest die Layer einer CAD-Datei, ordnet jedem Layer einen Familientyp zu und setzt alle Blöcke als Revit-Familien.</dd>
+              </dl>
+              <div class="tool-tags"><span>CAD</span><span>Revit</span><span data-en="Automation">Automatisierung</span></div>
+            </article>
+            <article class="tool-detail" data-tool="6" hidden>
+              <div class="tool-count">07 / 08</div><h2>INO TRACKER</h2>
+              <div class="tool-category" data-en="Effort tracking">Aufwandserfassung</div>
+              <dl class="tool-facts">
+                <dt data-en="Starting point">Ausgangslage</dt><dd data-en="How much modelling time goes into which project and document stays invisible without measurement.">Wie viel Modellierzeit in welches Projekt und Dokument fließt, bleibt ohne Messung unsichtbar.</dd>
+                <dt data-en="Solution">Lösung</dt><dd data-en="Records working time and Revit transactions per project, document and user — the data basis for INO Visualizer.">Erfasst Arbeitszeit und Revit-Transaktionen je Projekt, Dokument und Nutzer — die Datengrundlage für INO Visualizer.</dd>
+              </dl>
+              <div class="tool-tags"><span>Revit</span><span data-en="Data">Daten</span><span data-en="Automation">Automatisierung</span></div>
+            </article>
+            <article class="tool-detail" data-tool="7" hidden>
+              <div class="tool-count">08 / 08</div><h2>INO VISUALIZER</h2>
+              <div class="tool-category" data-en="Analytics">Auswertung</div>
+              <dl class="tool-facts">
+                <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Recorded project data only helps once it is presented clearly.">Erfasste Projektdaten nützen erst, wenn sie lesbar aufbereitet sind.</dd>
+                <dt data-en="Solution">Lösung</dt><dd data-en="Dashboard of hours, transactions and effectiveness per project, discipline and employee.">Dashboard für Stunden, Transaktionen und Effektivität je Projekt, Gewerk und Mitarbeiter.</dd>
+              </dl>
+              <div class="tool-tags"><span>Dashboard</span><span data-en="Data">Daten</span><span data-en="Automation">Automatisierung</span></div>
+            </article>
+          </div>
+        </div>
+        <div class="showcase-controls">
+          <button type="button" id="toolPrev" class="tool-arrow" aria-label="Vorheriges Werkzeug" data-en-aria-label="Previous tool"><span aria-hidden="true">←</span> <span data-en="Previous">Zurück</span></button>
+          <span class="showcase-status" aria-hidden="true"><span id="toolCurrent">01</span> / 08</span>
+          <button type="button" id="toolNext" class="tool-arrow" aria-label="Nächstes Werkzeug" data-en-aria-label="Next tool"><span data-en="Next">Weiter</span> <span aria-hidden="true">→</span></button>
+        </div>
+        <nav class="tool-nav" aria-label="Werkzeugauswahl" data-en-aria-label="Tool selection">
+          <button type="button" class="tool-nav-button" data-video="assets/videos/01-connector-compass.mp4" data-poster="assets/videos/posters/01-connector-compass.webp" aria-current="true">01 <span>Connector</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/02-ino-sheets.mp4" data-poster="assets/videos/posters/02-ino-sheets.webp">02 <span>Sheets</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/03-worksets-setter.mp4" data-poster="assets/videos/posters/03-worksets-setter.webp">03 <span>Worksets</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/04-ino-shared2project.mp4" data-poster="assets/videos/posters/04-ino-shared2project.webp">04 <span>Shared2Project</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/05-publish-settings.mp4" data-poster="assets/videos/posters/05-publish-settings.webp">05 <span>Publish</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/06-ino-cadverter.mp4" data-poster="assets/videos/posters/06-ino-cadverter.webp">06 <span>CADverter</span></button>
+          <button type="button" class="tool-nav-button" data-video="" data-poster="">07 <span>Tracker</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/08-ino-visualizer.mp4" data-poster="assets/videos/posters/08-ino-visualizer.webp">08 <span>Visualizer</span></button>
+        </nav>
+        <!-- Druck: alle acht Werkzeuge als Standbild statt Player -->
+        <div class="tool-print-grid" aria-hidden="true">
+          <figure><img src="assets/videos/posters/01-connector-compass.webp" alt="" decoding="async"><figcaption><span class="code">01</span> CONNECTOR COMPASS<br><span data-en="Pipe and fitting operations">Rohr- und Formteiloperationen</span></figcaption></figure>
+          <figure><img src="assets/videos/posters/02-ino-sheets.webp" alt="" decoding="async"><figcaption><span class="code">02</span> INO SHEETS<br><span data-en="Sheet creation">Planerstellung</span></figcaption></figure>
+          <figure><img src="assets/videos/posters/03-worksets-setter.webp" alt="" decoding="async"><figcaption><span class="code">03</span> WORKSETS SETTER<br><span data-en="Workset assignment">Workset-Zuordnung</span></figcaption></figure>
+          <figure><img src="assets/videos/posters/04-ino-shared2project.webp" alt="" decoding="async"><figcaption><span class="code">04</span> INO SHARED2PROJECT<br><span data-en="Parameter transfer">Parameterübertragung</span></figcaption></figure>
+          <figure><img src="assets/videos/posters/05-publish-settings.webp" alt="" decoding="async"><figcaption><span class="code">05</span> PUBLISH SETTINGS<br><span data-en="Release sets">Freigabesets</span></figcaption></figure>
+          <figure><img src="assets/videos/posters/06-ino-cadverter.webp" alt="" decoding="async"><figcaption><span class="code">06</span> INO CADVERTER<br><span data-en="CAD to Revit">CAD zu Revit</span></figcaption></figure>
+          <figure><div class="tool-print-empty"><span data-en="Recording to follow">Aufnahme folgt</span></div><figcaption><span class="code">07</span> INO TRACKER<br><span data-en="Effort tracking">Aufwandserfassung</span></figcaption></figure>
+          <figure><img src="assets/videos/posters/08-ino-visualizer.webp" alt="" decoding="async"><figcaption><span class="code">08</span> INO VISUALIZER<br><span data-en="Analytics">Auswertung</span></figcaption></figure>
+        </div>
+      </div>
+      <div class="sf">
+        <div><div class="k">Name</div><div class="v">Mostafa Gomaa</div></div>
+        <div><div class="k"><span data-en="Discipline">Fachbereich</span></div><div class="v"><span data-en="BIM Coordinator MEP">BIM-Koordinator TGA</span></div></div>
+        <div><div class="k"><span data-en="Location">Ort</span></div><div class="v">Berlin</div></div>
+        <div class="r"><div class="k"><span data-en="Sheet">Blatt</span></div><div class="v">11 / 17</div></div>
+      </div>
+    </div></div>
+  </section>
+
+  <section id="autoflow" class="sheet" aria-labelledby="autoflow-h">
+    <div class="sheet-scale"><div class="sheet-page">
+<div class="la">
+    <h1 id="autoflow-h" style="position:absolute;top:0;left:0"><span data-en="Automation in the BIM Workflow">Automatisierung im BIM-Ablauf</span></h1>
+    <div class="ov" style="left:0;top:18mm"><div class="h2" style="max-width:180mm"><span data-en="The process stays the same. The tools act where steps repeat.">Der Prozess bleibt derselbe. Die Werkzeuge setzen dort an, wo sich Arbeitsschritte wiederholen.</span></div></div>
+    <div class="ov" style="left:0;top:76mm;width:261mm"><div class="lab" style="font-size:6.5pt"><span data-en="Supported by automation">Unterstützt durch Automatisierung</span></div></div>
+    <div class="ov cn" style="left:0mm;top:44mm;width:40mm"><div class="cnbox"><span data-en="Project set-up">Projektaufsatz</span></div><div class="cnsub"><span data-en="BEP, coordinates, template">BAP, Koordinaten, Vorlage</span></div></div>
+    <div class="ov" style="left:0mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--signalt)"><span data-en="Template, parameters, worksets">Vorlage, Parameter, Worksets</span></div></div>
+    <div class="ov" style="left:40mm;top:53mm;width:3.5mm;height:.4mm;background:var(--g80)"></div>
+    <div class="ov cn" style="left:43.5mm;top:44mm;width:40mm"><div class="cnbox"><span data-en="Discipline models">Fachmodelle</span></div><div class="cnsub"><span data-en="Modelling to the standard">Modellierung nach Standard</span></div></div>
+    <div class="ov" style="left:43.5mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--signalt)"><span data-en="Sheet creation, workset assignment">Planerstellung, Workset-Zuordnung</span></div></div>
+    <div class="ov" style="left:83.5mm;top:53mm;width:3.5mm;height:.4mm;background:var(--g80)"></div>
+    <div class="ov cn" style="left:87mm;top:44mm;width:40mm"><div class="cnbox">QA / QC</div><div class="cnsub"><span data-en="Model review and clash detection">Modell- und Kollisionsprüfung</span></div></div>
+    <div class="ov" style="left:87mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--signalt)"><span data-en="Clash report processing">Auswertung der Prüfberichte</span></div></div>
+    <div class="ov" style="left:127mm;top:53mm;width:3.5mm;height:.4mm;background:var(--g80)"></div>
+    <div class="ov cn" style="left:130.5mm;top:44mm;width:40mm"><div class="cnbox"><span data-en="ACC coordination">ACC-Koordination</span></div><div class="cnsub"><span data-en="Issues, meetings, resolution">Issues, Termine, Klärung</span></div></div>
+    <div class="ov" style="left:130.5mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--g50)"><span data-en="manual">manuell</span></div></div>
+    <div class="ov" style="left:170.5mm;top:53mm;width:3.5mm;height:.4mm;background:var(--g80)"></div>
+    <div class="ov cn" style="left:174mm;top:44mm;width:40mm"><div class="cnbox"><span data-en="Release">Freigabe</span></div><div class="cnsub"><span data-en="Checked states per discipline">Geprüfte Stände je Gewerk</span></div></div>
+    <div class="ov" style="left:174mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--signalt)"><span data-en="Release sets per discipline">Freigabesets je Gewerk</span></div></div>
+    <div class="ov" style="left:214mm;top:53mm;width:3.5mm;height:.4mm;background:var(--g80)"></div>
+    <div class="ov cn" style="left:217.5mm;top:44mm;width:40mm"><div class="cnbox"><span data-en="Delivery">Übergabe</span></div><div class="cnsub"><span data-en="IFC and drawing issue">IFC und Planlieferung</span></div></div>
+    <div class="ov" style="left:217.5mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--g50)"><span data-en="manual">manuell</span></div></div>
+
+    <div class="ov" style="left:0;top:120mm;width:261mm;border-top:.25mm solid var(--g20)"></div>
+    <div class="ov" style="left:0;top:128mm"><div class="srule"></div>
+      <div class="h2" style="margin-top:4mm;max-width:150mm;font-size:13pt"><span data-en="Automation supports the BIM process.">Automatisierung unterstützt den BIM-Prozess.</span></div></div>
+    <div class="ov" style="left:155.11mm;top:128mm;width:105.89mm">
+      <div class="bd" style="max-width:105.89mm"><span data-en="Engineering decisions always remain human. Checking, weighing up and releasing happen in the coordination process — the tools only make sure the repetitive work beforehand no longer occurs.">Ingenieurentscheidungen bleiben immer menschlich. Geprüft, abgewogen und freigegeben wird im Koordinationsprozess — die Werkzeuge sorgen nur dafür, dass die Wiederholarbeit davor nicht mehr anfällt.</span></div></div>
+  </div>
+  <div class="sf">
+    <div><div class="k">Name</div><div class="v">Mostafa Gomaa</div></div>
+    <div><div class="k"><span data-en="Discipline">Fachbereich</span></div><div class="v"><span data-en="BIM Coordinator MEP">BIM-Koordinator TGA</span></div></div>
+    <div><div class="k"><span data-en="Location">Ort</span></div><div class="v">Berlin</div></div>
+    <div class="r"><div class="k"><span data-en="Sheet">Blatt</span></div><div class="v">12 / 17</div></div>
+  </div>
+    </div></div>
+  </section>
+
   <section id="standard" class="sheet" aria-labelledby="standard-h">
     <div class="sheet-scale"><div class="sheet-page">
 <div class="la">
-    <div class="akt" style="position:absolute;top:-8mm;left:0"><i></i><span data-en="Act 03 — The System">Akt 03 — Das System</span></div>
+    <div class="akt" style="position:absolute;top:-8mm;left:0"><i></i><span data-en="Act 05 — The System">Akt 05 — Das System</span></div>
     <h1 style="position:absolute;top:0;left:0"><span data-en="The BIM Standard">Der BIM-Standard</span></h1>
     <div class="ov" style="left:0;top:18mm">
       <div class="h2" style="max-width:150mm"><span data-en="15 pages, 25 tables, ISO 19650. Written by me and rolled out company-wide.">15 Seiten, 25 Tabellen, ISO 19650. Von mir verfasst und unternehmensweit eingeführt.</span></div>
@@ -495,7 +661,7 @@
     <div><div class="k">Name</div><div class="v">Mostafa Gomaa</div></div>
     <div><div class="k"><span data-en="Discipline">Fachbereich</span></div><div class="v"><span data-en="BIM Coordinator MEP">BIM-Koordinator TGA</span></div></div>
     <div><div class="k"><span data-en="Location">Ort</span></div><div class="v">Berlin</div></div>
-    <div class="r"><div class="k"><span data-en="Sheet">Blatt</span></div><div class="v">11 / 17</div></div>
+    <div class="r"><div class="k"><span data-en="Sheet">Blatt</span></div><div class="v">13 / 17</div></div>
   </div>
     </div></div>
   </section>
@@ -541,7 +707,7 @@
     <div><div class="k">Name</div><div class="v">Mostafa Gomaa</div></div>
     <div><div class="k"><span data-en="Discipline">Fachbereich</span></div><div class="v"><span data-en="BIM Coordinator MEP">BIM-Koordinator TGA</span></div></div>
     <div><div class="k"><span data-en="Location">Ort</span></div><div class="v">Berlin</div></div>
-    <div class="r"><div class="k"><span data-en="Sheet">Blatt</span></div><div class="v">12 / 17</div></div>
+    <div class="r"><div class="k"><span data-en="Sheet">Blatt</span></div><div class="v">14 / 17</div></div>
   </div>
     </div></div>
   </section>
@@ -584,94 +750,12 @@
     <div><div class="k">Name</div><div class="v">Mostafa Gomaa</div></div>
     <div><div class="k"><span data-en="Discipline">Fachbereich</span></div><div class="v"><span data-en="BIM Coordinator MEP">BIM-Koordinator TGA</span></div></div>
     <div><div class="k"><span data-en="Location">Ort</span></div><div class="v">Berlin</div></div>
-    <div class="r"><div class="k"><span data-en="Sheet">Blatt</span></div><div class="v">13 / 17</div></div>
-  </div>
-    </div></div>
-  </section>
-
-  <section id="automation" class="sheet dark" aria-labelledby="automation-h">
-    <div class="sheet-scale"><div class="sheet-page">
-<div class="la">
-    <div class="akt" style="position:absolute;top:-8mm;left:0"><i></i><span data-en="Act 05 — Leverage">Akt 05 — Hebel</span></div>
-    <h1 style="position:absolute;top:0;left:0;color:#FAFAF8"><span data-en="Automation — Tools">Automatisierung — Werkzeuge</span></h1>
-    <div class="ov" style="left:0;top:16mm;width:261mm">
-      <div class="h2" style="max-width:230mm;color:#FAFAF8;font-size:11.5pt"><span data-en="My own Revit add-ins that take repetitive manual work out of model production.">Eigene Revit-Add-ins, die wiederkehrende Handarbeit aus der Modellproduktion nehmen.</span></div></div>
-    <div class="im" style="left:0mm;top:28mm;width:83.68mm;height:47.07mm">
-      <img src="assets/14_t1_sheets.png" alt="Werkzeug zur automatischen Planerstellung" data-en-alt="Tool for automated sheet creation" loading="lazy" decoding="async"></div>
-    <div class="ov tool" style="left:0mm;top:78mm;width:83.68mm"><div class="card">
-      <div class="code">INO Sheets</div><h3 style="color:#FAFAF8"><span data-en="Sheet creation">Planerstellung</span></h3>
-      <div class="ttxt" style="font-size:7.5pt"><span data-en="Creates sheets and sheet parameters from an Excel list.">Erzeugt Pläne und Planparameter aus einer Excel-Liste.</span></div></div></div>
-    <div class="im" style="left:88.64mm;top:28mm;width:83.68mm;height:47.07mm">
-      <img src="assets/14_t2_worksets.png" alt="Werkzeug zur regelbasierten Workset-Zuordnung" data-en-alt="Tool for rule-based workset assignment" loading="lazy" decoding="async"></div>
-    <div class="ov tool" style="left:88.64mm;top:78mm;width:83.68mm"><div class="card">
-      <div class="code">WorkSets Setter</div><h3 style="color:#FAFAF8"><span data-en="Workset assignment">Workset-Zuordnung</span></h3>
-      <div class="ttxt" style="font-size:7.5pt"><span data-en="Assigns worksets by rule, per category and filter.">Weist Worksets regelbasiert je Kategorie und Filter zu.</span></div></div></div>
-    <div class="im" style="left:177.28mm;top:28mm;width:83.68mm;height:47.07mm">
-      <img src="assets/14_t3_shared.png" alt="Werkzeug zur Übertragung von Shared Parameters" data-en-alt="Tool for transferring shared parameters" loading="lazy" decoding="async"></div>
-    <div class="ov tool" style="left:177.28mm;top:78mm;width:83.68mm"><div class="card">
-      <div class="code">SharedToProject</div><h3 style="color:#FAFAF8"><span data-en="Parameter transfer">Parameterübertragung</span></h3>
-      <div class="ttxt" style="font-size:7.5pt"><span data-en="Transfers shared parameters, grouped, as project parameters.">Überträgt Shared Parameters gruppiert als Projektparameter.</span></div></div></div>
-    <div class="im" style="left:0mm;top:100mm;width:83.68mm;height:47.07mm">
-      <img src="assets/14_t4_publish.png" alt="Gespeicherte Freigabesets je Gewerk" data-en-alt="Saved release sets per discipline" loading="lazy" decoding="async"></div>
-    <div class="ov tool" style="left:0mm;top:150mm;width:83.68mm"><div class="card">
-      <div class="code">Publish Settings</div><h3 style="color:#FAFAF8"><span data-en="Release sets">Freigabesets</span></h3>
-      <div class="ttxt" style="font-size:7.5pt"><span data-en="Stores release sets per discipline instead of manual selection.">Speichert Freigabesets je Gewerk statt manueller Auswahl.</span></div></div></div>
-    <div class="im" style="left:88.64mm;top:100mm;width:83.68mm;height:47.07mm">
-      <img src="assets/14_t5_compass.png" alt="Werkzeug für Rohr- und Formteiloperationen" data-en-alt="Tool for pipe and fitting operations" loading="lazy" decoding="async"></div>
-    <div class="ov tool" style="left:88.64mm;top:150mm;width:83.68mm"><div class="card">
-      <div class="code">Connector Compass</div><h3 style="color:#FAFAF8"><span data-en="Pipe and fitting operations">Rohr- und Formteiloperationen</span></h3>
-      <div class="ttxt" style="font-size:7.5pt"><span data-en="Creates pipes from open connectors, adds elbows and aligns elements.">Erzeugt Rohre aus offenen Anschlüssen, setzt Bögen und richtet Bauteile aus.</span></div></div></div>
-    <div class="ov tool" style="left:177.28mm;top:100mm;width:83.68mm"><div class="card">
-      <div class="code"><span data-en="Further tools">Weitere Werkzeuge</span></div>
-      <div class="ttxt" style="font-size:7.5pt;line-height:1.9;margin-top:3mm"><span data-en="CAD converter — 2D symbols to Revit families">CAD-Konverter — 2D-Symbole zu Revit-Familien</span><br><span data-en="Clash report processing">Clash-Report-Auswertung</span><br><span data-en="Model and project statistics">Modell- und Projektstatistik</span></div></div></div>
-  </div>
-  <div class="sf">
-    <div><div class="k">Name</div><div class="v">Mostafa Gomaa</div></div>
-    <div><div class="k"><span data-en="Discipline">Fachbereich</span></div><div class="v"><span data-en="BIM Coordinator MEP">BIM-Koordinator TGA</span></div></div>
-    <div><div class="k"><span data-en="Location">Ort</span></div><div class="v">Berlin</div></div>
-    <div class="r"><div class="k"><span data-en="Sheet">Blatt</span></div><div class="v">14 / 17</div></div>
-  </div>
-    </div></div>
-  </section>
-
-  <section id="autoflow" class="sheet" aria-labelledby="autoflow-h">
-    <div class="sheet-scale"><div class="sheet-page">
-<div class="la">
-    <h1 style="position:absolute;top:0;left:0"><span data-en="Automation in the BIM Workflow">Automatisierung im BIM-Ablauf</span></h1>
-    <div class="ov" style="left:0;top:18mm"><div class="h2" style="max-width:180mm"><span data-en="The process stays the same. The tools act where steps repeat.">Der Prozess bleibt derselbe. Die Werkzeuge setzen dort an, wo sich Arbeitsschritte wiederholen.</span></div></div>
-    <div class="ov" style="left:0;top:76mm;width:261mm"><div class="lab" style="font-size:6.5pt"><span data-en="Supported by automation">Unterstützt durch Automatisierung</span></div></div>
-    <div class="ov cn" style="left:0mm;top:44mm;width:40mm"><div class="cnbox"><span data-en="Project set-up">Projektaufsatz</span></div><div class="cnsub"><span data-en="BEP, coordinates, template">BAP, Koordinaten, Vorlage</span></div></div>
-    <div class="ov" style="left:0mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--signalt)"><span data-en="Template, parameters, worksets">Vorlage, Parameter, Worksets</span></div></div>
-    <div class="ov" style="left:40mm;top:53mm;width:3.5mm;height:.4mm;background:var(--g80)"></div>
-    <div class="ov cn" style="left:43.5mm;top:44mm;width:40mm"><div class="cnbox"><span data-en="Discipline models">Fachmodelle</span></div><div class="cnsub"><span data-en="Modelling to the standard">Modellierung nach Standard</span></div></div>
-    <div class="ov" style="left:43.5mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--signalt)"><span data-en="Sheet creation, workset assignment">Planerstellung, Workset-Zuordnung</span></div></div>
-    <div class="ov" style="left:83.5mm;top:53mm;width:3.5mm;height:.4mm;background:var(--g80)"></div>
-    <div class="ov cn" style="left:87mm;top:44mm;width:40mm"><div class="cnbox">QA / QC</div><div class="cnsub"><span data-en="Model review and clash detection">Modell- und Kollisionsprüfung</span></div></div>
-    <div class="ov" style="left:87mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--signalt)"><span data-en="Clash report processing">Auswertung der Prüfberichte</span></div></div>
-    <div class="ov" style="left:127mm;top:53mm;width:3.5mm;height:.4mm;background:var(--g80)"></div>
-    <div class="ov cn" style="left:130.5mm;top:44mm;width:40mm"><div class="cnbox"><span data-en="ACC coordination">ACC-Koordination</span></div><div class="cnsub"><span data-en="Issues, meetings, resolution">Issues, Termine, Klärung</span></div></div>
-    <div class="ov" style="left:130.5mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--g50)"><span data-en="manual">manuell</span></div></div>
-    <div class="ov" style="left:170.5mm;top:53mm;width:3.5mm;height:.4mm;background:var(--g80)"></div>
-    <div class="ov cn" style="left:174mm;top:44mm;width:40mm"><div class="cnbox"><span data-en="Release">Freigabe</span></div><div class="cnsub"><span data-en="Checked states per discipline">Geprüfte Stände je Gewerk</span></div></div>
-    <div class="ov" style="left:174mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--signalt)"><span data-en="Release sets per discipline">Freigabesets je Gewerk</span></div></div>
-    <div class="ov" style="left:214mm;top:53mm;width:3.5mm;height:.4mm;background:var(--g80)"></div>
-    <div class="ov cn" style="left:217.5mm;top:44mm;width:40mm"><div class="cnbox"><span data-en="Delivery">Übergabe</span></div><div class="cnsub"><span data-en="IFC and drawing issue">IFC und Planlieferung</span></div></div>
-    <div class="ov" style="left:217.5mm;top:82mm;width:40mm"><div class="cntool" style="color:var(--g50)"><span data-en="manual">manuell</span></div></div>
-
-    <div class="ov" style="left:0;top:120mm;width:261mm;border-top:.25mm solid var(--g20)"></div>
-    <div class="ov" style="left:0;top:128mm"><div class="srule"></div>
-      <div class="h2" style="margin-top:4mm;max-width:150mm;font-size:13pt"><span data-en="Automation supports the BIM process.">Automatisierung unterstützt den BIM-Prozess.</span></div></div>
-    <div class="ov" style="left:155.11mm;top:128mm;width:105.89mm">
-      <div class="bd" style="max-width:105.89mm"><span data-en="Engineering decisions always remain human. Checking, weighing up and releasing happen in the coordination process — the tools only make sure the repetitive work beforehand no longer occurs.">Ingenieurentscheidungen bleiben immer menschlich. Geprüft, abgewogen und freigegeben wird im Koordinationsprozess — die Werkzeuge sorgen nur dafür, dass die Wiederholarbeit davor nicht mehr anfällt.</span></div></div>
-  </div>
-  <div class="sf">
-    <div><div class="k">Name</div><div class="v">Mostafa Gomaa</div></div>
-    <div><div class="k"><span data-en="Discipline">Fachbereich</span></div><div class="v"><span data-en="BIM Coordinator MEP">BIM-Koordinator TGA</span></div></div>
-    <div><div class="k"><span data-en="Location">Ort</span></div><div class="v">Berlin</div></div>
     <div class="r"><div class="k"><span data-en="Sheet">Blatt</span></div><div class="v">15 / 17</div></div>
   </div>
     </div></div>
   </section>
+
+
 
   <section id="earlier" class="sheet" aria-labelledby="earlier-h">
     <div class="sheet-scale"><div class="sheet-page">
@@ -809,6 +893,6 @@
 
 
 <script src="js/translations.js?v=6"></script>
-<script src="js/app.js?v=6"></script>
+<script src="js/app.js?v=8"></script>
 </body>
 </html>

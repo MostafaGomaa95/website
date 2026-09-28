@@ -43,6 +43,7 @@
      zurueck nach DE ihn wiederherstellen kann. */
   var DE = new WeakMap();
   var DE_ALT = new WeakMap();
+  var DE_LABEL = new WeakMap();
 
   function captureBaseline() {
     document.querySelectorAll('[data-en]').forEach(function (el) {
@@ -50,6 +51,9 @@
     });
     document.querySelectorAll('[data-en-alt]').forEach(function (el) {
       DE_ALT.set(el, el.getAttribute('alt') || '');
+    });
+    document.querySelectorAll('[data-en-aria-label]').forEach(function (el) {
+      DE_LABEL.set(el, el.getAttribute('aria-label') || '');
     });
   }
 
@@ -71,6 +75,10 @@
     document.querySelectorAll('[data-en-alt]').forEach(function (el) {
       var v = en ? el.getAttribute('data-en-alt') : DE_ALT.get(el);
       if (v != null) el.setAttribute('alt', v);
+    });
+    document.querySelectorAll('[data-en-aria-label]').forEach(function (el) {
+      var v = en ? el.getAttribute('data-en-aria-label') : DE_LABEL.get(el);
+      if (v != null) el.setAttribute('aria-label', v);
     });
 
     if (meta.title) {
@@ -103,6 +111,76 @@
     if (SUPPORTED.indexOf(lang) === -1) return;
     try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
     applyLang(lang, true);
+  }
+
+  /* ---------------- Werkzeug-Showcase ----------------
+     Ein einziger Player fuer alle acht Aufnahmen: beim Wechsel wird die
+     laufende Aufnahme angehalten und nur die Metadaten der neuen geladen.
+     Werkzeuge ohne data-video zeigen den Hinweis "Aufnahme folgt". */
+  var activeTool = 0;
+  var toolButtons, toolDetails, toolVideo, toolSource, toolUnavailable, toolCurrent;
+
+  function selectTool(index, focusButton) {
+    if (!toolButtons || index < 0 || index >= toolButtons.length) return;
+    if (focusButton) toolButtons[index].focus();
+    if (index === activeTool) return;
+    activeTool = index;
+
+    var button = toolButtons[index];
+    var path = button.dataset.video || '';
+    var poster = button.dataset.poster || '';
+    toolVideo.pause();
+    if (path) toolSource.src = path; else toolSource.removeAttribute('src');
+    if (poster) toolVideo.poster = poster; else toolVideo.removeAttribute('poster');
+    toolVideo.load();                // bricht einen laufenden Download ab
+    toolVideo.hidden = !path;
+    toolUnavailable.hidden = !!path;
+
+    toolDetails.forEach(function (detail, i) { detail.hidden = i !== index; });
+    toolButtons.forEach(function (b, i) {
+      if (i === index) b.setAttribute('aria-current', 'true');
+      else b.removeAttribute('aria-current');
+    });
+    toolCurrent.textContent = (index < 9 ? '0' : '') + (index + 1);
+  }
+
+  function initToolShowcase() {
+    toolButtons = Array.prototype.slice.call(document.querySelectorAll('.tool-nav-button'));
+    toolDetails = Array.prototype.slice.call(document.querySelectorAll('.tool-detail'));
+    toolVideo = document.getElementById('toolVideo');
+    if (!toolVideo || !toolButtons.length || toolButtons.length !== toolDetails.length) return;
+    toolSource = toolVideo.querySelector('source');
+    toolUnavailable = document.getElementById('toolUnavailable');
+    toolCurrent = document.getElementById('toolCurrent');
+    var n = toolButtons.length;
+
+    toolButtons.forEach(function (button, index) {
+      button.addEventListener('click', function () { selectTool(index, false); });
+      button.addEventListener('keydown', function (event) {
+        var next;
+        if (event.key === 'ArrowRight') next = (index + 1) % n;
+        else if (event.key === 'ArrowLeft') next = (index - 1 + n) % n;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = n - 1;
+        else return;
+        event.preventDefault();
+        selectTool(next, true);
+      });
+    });
+    document.getElementById('toolPrev').addEventListener('click', function () {
+      selectTool((activeTool - 1 + n) % n, false);
+    });
+    document.getElementById('toolNext').addEventListener('click', function () {
+      selectTool((activeTool + 1) % n, false);
+    });
+
+    // Wer weiterscrollt, laesst keine Aufnahme im Hintergrund laufen
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) toolVideo.pause();
+      }).observe(document.getElementById('automation'));
+    }
+    window.addEventListener('beforeprint', function () { toolVideo.pause(); });
   }
 
   /* ---------------- Blattskalierung ----------------
@@ -244,6 +322,7 @@
     initProgress();
     initObservers();
     initMobileNav();
+    initToolShowcase();
 
     var t;
     window.addEventListener('resize', function () {
