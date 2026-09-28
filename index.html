@@ -29,7 +29,7 @@
 
 <link rel="preload" href="assets/fonts/archivo-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/style.css?v=8">
+<link rel="stylesheet" href="css/style.css?v=9">
 </head>
 <body>
 
@@ -453,12 +453,11 @@
               <source src="assets/videos/01-connector-compass.mp4" type="video/mp4">
               <span data-en="Your browser cannot play this video.">Ihr Browser kann dieses Video nicht abspielen.</span>
             </video>
-            <div id="toolUnavailable" class="showcase-unavailable" hidden><span class="code" data-en="Recording to follow">Aufnahme folgt</span></div>
             <span id="tool-video-caption" class="sr-only" data-en="Screen recording of the selected automation tool, without sound">Bildschirmaufnahme des ausgewählten Automatisierungswerkzeugs, ohne Ton</span>
           </div>
           <div class="showcase-info" aria-live="polite" aria-atomic="true">
             <article class="tool-detail" data-tool="0">
-              <div class="tool-count">01 / 08</div><h2>CONNECTOR COMPASS</h2>
+              <h2>CONNECTOR COMPASS</h2>
               <div class="tool-category" data-en="Pipe and fitting operations">Rohr- und Formteiloperationen</div>
               <dl class="tool-facts">
                 <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Connecting open connectors, adding elbows and aligning pipes takes many single clicks in Revit.">Offene Anschlüsse verbinden, Bögen setzen und Rohre ausrichten kostet in Revit viele Einzelklicks.</dd>
@@ -467,7 +466,7 @@
               <div class="tool-tags"><span>Revit</span><span>MEP</span><span data-en="Automation">Automatisierung</span></div>
             </article>
             <article class="tool-detail" data-tool="1" hidden>
-              <div class="tool-count">02 / 08</div><h2>INO SHEETS</h2>
+              <h2>INO SHEETS</h2>
               <div class="tool-category" data-en="Sheet creation">Planerstellung</div>
               <dl class="tool-facts">
                 <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Sheet lists with hundreds of sheets are created and numbered one by one in Revit.">Planlisten mit hunderten Blättern werden in Revit einzeln angelegt und nummeriert.</dd>
@@ -476,7 +475,7 @@
               <div class="tool-tags"><span>Revit</span><span>Excel</span><span data-en="Automation">Automatisierung</span></div>
             </article>
             <article class="tool-detail" data-tool="2" hidden>
-              <div class="tool-count">03 / 08</div><h2>WORKSETS SETTER</h2>
+              <h2>WORKSETS SETTER</h2>
               <div class="tool-category" data-en="Workset assignment">Workset-Zuordnung</div>
               <dl class="tool-facts">
                 <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Elements are moved into worksets by hand — error-prone in large models.">Bauteile werden von Hand in Worksets verschoben — fehleranfällig in großen Modellen.</dd>
@@ -485,7 +484,7 @@
               <div class="tool-tags"><span>Revit</span><span>BIM</span><span data-en="Automation">Automatisierung</span></div>
             </article>
             <article class="tool-detail" data-tool="3" hidden>
-              <div class="tool-count">04 / 08</div><h2>INO SHARED2PROJECT</h2>
+              <h2>INO SHARED2PROJECT</h2>
               <div class="tool-category" data-en="Parameter transfer">Parameterübertragung</div>
               <dl class="tool-facts">
                 <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Adding shared parameters one by one as project parameters takes time and causes drift between projects.">Shared Parameters einzeln als Projektparameter anzulegen dauert und führt zu Abweichungen zwischen Projekten.</dd>
@@ -494,7 +493,7 @@
               <div class="tool-tags"><span>Revit</span><span>BIM</span><span data-en="Automation">Automatisierung</span></div>
             </article>
             <article class="tool-detail" data-tool="4" hidden>
-              <div class="tool-count">05 / 08</div><h2>PUBLISH SETTINGS</h2>
+              <h2>PUBLISH SETTINGS</h2>
               <div class="tool-category" data-en="Release sets">Freigabesets</div>
               <dl class="tool-facts">
                 <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Views and sheets for cloud publishing are picked by hand in Revit.">Für die Cloud-Veröffentlichung werden Ansichten und Pläne in Revit von Hand ausgewählt.</dd>
@@ -503,7 +502,7 @@
               <div class="tool-tags"><span>Revit</span><span>ACC</span><span data-en="Automation">Automatisierung</span></div>
             </article>
             <article class="tool-detail" data-tool="5" hidden>
-              <div class="tool-count">06 / 08</div><h2>INO CADVERTER</h2>
+              <h2>INO CADVERTER</h2>
               <div class="tool-category" data-en="CAD to Revit">CAD zu Revit</div>
               <dl class="tool-facts">
                 <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Luminaires and symbols from 2D CAD drawings are remodelled piece by piece in Revit.">Leuchten und Symbole aus 2D-CAD-Plänen werden in Revit Stück für Stück nachmodelliert.</dd>
@@ -512,16 +511,7 @@
               <div class="tool-tags"><span>CAD</span><span>Revit</span><span data-en="Automation">Automatisierung</span></div>
             </article>
             <article class="tool-detail" data-tool="6" hidden>
-              <div class="tool-count">07 / 08</div><h2>INO TRACKER</h2>
-              <div class="tool-category" data-en="Effort tracking">Aufwandserfassung</div>
-              <dl class="tool-facts">
-                <dt data-en="Starting point">Ausgangslage</dt><dd data-en="How much modelling time goes into which project and document stays invisible without measurement.">Wie viel Modellierzeit in welches Projekt und Dokument fließt, bleibt ohne Messung unsichtbar.</dd>
-                <dt data-en="Solution">Lösung</dt><dd data-en="Records working time and Revit transactions per project, document and user — the data basis for INO Visualizer.">Erfasst Arbeitszeit und Revit-Transaktionen je Projekt, Dokument und Nutzer — die Datengrundlage für INO Visualizer.</dd>
-              </dl>
-              <div class="tool-tags"><span>Revit</span><span data-en="Data">Daten</span><span data-en="Automation">Automatisierung</span></div>
-            </article>
-            <article class="tool-detail" data-tool="7" hidden>
-              <div class="tool-count">08 / 08</div><h2>INO VISUALIZER</h2>
+              <h2>INO VISUALIZER</h2>
               <div class="tool-category" data-en="Analytics">Auswertung</div>
               <dl class="tool-facts">
                 <dt data-en="Starting point">Ausgangslage</dt><dd data-en="Recorded project data only helps once it is presented clearly.">Erfasste Projektdaten nützen erst, wenn sie lesbar aufbereitet sind.</dd>
@@ -531,22 +521,23 @@
             </article>
           </div>
         </div>
-        <div class="showcase-controls">
-          <button type="button" id="toolPrev" class="tool-arrow" aria-label="Vorheriges Werkzeug" data-en-aria-label="Previous tool"><span aria-hidden="true">←</span> <span data-en="Previous">Zurück</span></button>
-          <span class="showcase-status" aria-hidden="true"><span id="toolCurrent">01</span> / 08</span>
-          <button type="button" id="toolNext" class="tool-arrow" aria-label="Nächstes Werkzeug" data-en-aria-label="Next tool"><span data-en="Next">Weiter</span> <span aria-hidden="true">→</span></button>
-        </div>
         <nav class="tool-nav" aria-label="Werkzeugauswahl" data-en-aria-label="Tool selection">
-          <button type="button" class="tool-nav-button" data-video="assets/videos/01-connector-compass.mp4" data-poster="assets/videos/posters/01-connector-compass.webp" aria-current="true">01 <span>Connector</span></button>
-          <button type="button" class="tool-nav-button" data-video="assets/videos/02-ino-sheets.mp4" data-poster="assets/videos/posters/02-ino-sheets.webp">02 <span>Sheets</span></button>
-          <button type="button" class="tool-nav-button" data-video="assets/videos/03-worksets-setter.mp4" data-poster="assets/videos/posters/03-worksets-setter.webp">03 <span>Worksets</span></button>
-          <button type="button" class="tool-nav-button" data-video="assets/videos/04-ino-shared2project.mp4" data-poster="assets/videos/posters/04-ino-shared2project.webp">04 <span>Shared2Project</span></button>
-          <button type="button" class="tool-nav-button" data-video="assets/videos/05-publish-settings.mp4" data-poster="assets/videos/posters/05-publish-settings.webp">05 <span>Publish</span></button>
-          <button type="button" class="tool-nav-button" data-video="assets/videos/06-ino-cadverter.mp4" data-poster="assets/videos/posters/06-ino-cadverter.webp">06 <span>CADverter</span></button>
-          <button type="button" class="tool-nav-button" data-video="" data-poster="">07 <span>Tracker</span></button>
-          <button type="button" class="tool-nav-button" data-video="assets/videos/08-ino-visualizer.mp4" data-poster="assets/videos/posters/08-ino-visualizer.webp">08 <span>Visualizer</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/01-connector-compass.mp4" data-poster="assets/videos/posters/01-connector-compass.webp" aria-current="true">01 <span>Connector Compass</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/02-ino-sheets.mp4" data-poster="assets/videos/posters/02-ino-sheets.webp">02 <span>INO Sheets</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/03-worksets-setter.mp4" data-poster="assets/videos/posters/03-worksets-setter.webp">03 <span>Worksets Setter</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/04-ino-shared2project.mp4" data-poster="assets/videos/posters/04-ino-shared2project.webp">04 <span>INO Shared2Project</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/05-publish-settings.mp4" data-poster="assets/videos/posters/05-publish-settings.webp">05 <span>Publish Settings</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/06-ino-cadverter.mp4" data-poster="assets/videos/posters/06-ino-cadverter.webp">06 <span>INO CADverter</span></button>
+          <button type="button" class="tool-nav-button" data-video="assets/videos/07-ino-visualizer.mp4" data-poster="assets/videos/posters/07-ino-visualizer.webp">07 <span>INO Visualizer</span></button>
         </nav>
-        <!-- Druck: alle acht Werkzeuge als Standbild statt Player -->
+        <!-- Eigene Bibliothek: MoGo Revit Extension -->
+        <aside class="mogo" aria-labelledby="mogo-h">
+          <div class="mogo-id"><span class="mogo-k" data-en="Created by me · open source">Von mir entwickelt · Open Source</span><h3 id="mogo-h">MoGo Revit Extension</h3></div>
+          <p class="mogo-txt"><span data-en="A comprehensive library of extension methods for Revit API development — 100+ methods, supporting Revit 2023–2026.">Eine umfassende Bibliothek von Extension Methods für die Revit-API-Entwicklung — über 100 Methoden, unterstützt Revit 2023–2026.</span></p>
+          <code class="mogo-code">var walls = doc.GetElements&lt;Wall&gt;();</code>
+          <div class="mogo-links"><a href="https://mogo-docs.netlify.app/" target="_blank" rel="noopener">mogo-docs.netlify.app ↗</a><a href="https://www.nuget.org/packages/MoGo.Revit.Extensions" target="_blank" rel="noopener">NuGet ↗</a></div>
+        </aside>
+        <!-- Druck: alle sieben Werkzeuge als Standbild statt Player -->
         <div class="tool-print-grid" aria-hidden="true">
           <figure><img src="assets/videos/posters/01-connector-compass.webp" alt="" decoding="async"><figcaption><span class="code">01</span> CONNECTOR COMPASS<br><span data-en="Pipe and fitting operations">Rohr- und Formteiloperationen</span></figcaption></figure>
           <figure><img src="assets/videos/posters/02-ino-sheets.webp" alt="" decoding="async"><figcaption><span class="code">02</span> INO SHEETS<br><span data-en="Sheet creation">Planerstellung</span></figcaption></figure>
@@ -554,8 +545,7 @@
           <figure><img src="assets/videos/posters/04-ino-shared2project.webp" alt="" decoding="async"><figcaption><span class="code">04</span> INO SHARED2PROJECT<br><span data-en="Parameter transfer">Parameterübertragung</span></figcaption></figure>
           <figure><img src="assets/videos/posters/05-publish-settings.webp" alt="" decoding="async"><figcaption><span class="code">05</span> PUBLISH SETTINGS<br><span data-en="Release sets">Freigabesets</span></figcaption></figure>
           <figure><img src="assets/videos/posters/06-ino-cadverter.webp" alt="" decoding="async"><figcaption><span class="code">06</span> INO CADVERTER<br><span data-en="CAD to Revit">CAD zu Revit</span></figcaption></figure>
-          <figure><div class="tool-print-empty"><span data-en="Recording to follow">Aufnahme folgt</span></div><figcaption><span class="code">07</span> INO TRACKER<br><span data-en="Effort tracking">Aufwandserfassung</span></figcaption></figure>
-          <figure><img src="assets/videos/posters/08-ino-visualizer.webp" alt="" decoding="async"><figcaption><span class="code">08</span> INO VISUALIZER<br><span data-en="Analytics">Auswertung</span></figcaption></figure>
+          <figure><img src="assets/videos/posters/07-ino-visualizer.webp" alt="" decoding="async"><figcaption><span class="code">07</span> INO VISUALIZER<br><span data-en="Analytics">Auswertung</span></figcaption></figure>
         </div>
       </div>
       <div class="sf">
@@ -893,6 +883,6 @@
 
 
 <script src="js/translations.js?v=6"></script>
-<script src="js/app.js?v=8"></script>
+<script src="js/app.js?v=9"></script>
 </body>
 </html>

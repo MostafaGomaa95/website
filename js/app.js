@@ -115,10 +115,9 @@
 
   /* ---------------- Werkzeug-Showcase ----------------
      Ein einziger Player fuer alle acht Aufnahmen: beim Wechsel wird die
-     laufende Aufnahme angehalten und nur die Metadaten der neuen geladen.
-     Werkzeuge ohne data-video zeigen den Hinweis "Aufnahme folgt". */
+     laufende Aufnahme angehalten und nur die Metadaten der neuen geladen. */
   var activeTool = 0;
-  var toolButtons, toolDetails, toolVideo, toolSource, toolUnavailable, toolCurrent;
+  var toolButtons, toolDetails, toolVideo, toolSource;
 
   function selectTool(index, focusButton) {
     if (!toolButtons || index < 0 || index >= toolButtons.length) return;
@@ -126,22 +125,16 @@
     if (index === activeTool) return;
     activeTool = index;
 
-    var button = toolButtons[index];
-    var path = button.dataset.video || '';
-    var poster = button.dataset.poster || '';
     toolVideo.pause();
-    if (path) toolSource.src = path; else toolSource.removeAttribute('src');
-    if (poster) toolVideo.poster = poster; else toolVideo.removeAttribute('poster');
+    toolSource.src = toolButtons[index].dataset.video;
+    toolVideo.poster = toolButtons[index].dataset.poster;
     toolVideo.load();                // bricht einen laufenden Download ab
-    toolVideo.hidden = !path;
-    toolUnavailable.hidden = !!path;
 
     toolDetails.forEach(function (detail, i) { detail.hidden = i !== index; });
     toolButtons.forEach(function (b, i) {
       if (i === index) b.setAttribute('aria-current', 'true');
       else b.removeAttribute('aria-current');
     });
-    toolCurrent.textContent = (index < 9 ? '0' : '') + (index + 1);
   }
 
   function initToolShowcase() {
@@ -150,8 +143,6 @@
     toolVideo = document.getElementById('toolVideo');
     if (!toolVideo || !toolButtons.length || toolButtons.length !== toolDetails.length) return;
     toolSource = toolVideo.querySelector('source');
-    toolUnavailable = document.getElementById('toolUnavailable');
-    toolCurrent = document.getElementById('toolCurrent');
     var n = toolButtons.length;
 
     toolButtons.forEach(function (button, index) {
@@ -166,12 +157,6 @@
         event.preventDefault();
         selectTool(next, true);
       });
-    });
-    document.getElementById('toolPrev').addEventListener('click', function () {
-      selectTool((activeTool - 1 + n) % n, false);
-    });
-    document.getElementById('toolNext').addEventListener('click', function () {
-      selectTool((activeTool + 1) % n, false);
     });
 
     // Wer weiterscrollt, laesst keine Aufnahme im Hintergrund laufen

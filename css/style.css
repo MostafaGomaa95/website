@@ -484,21 +484,17 @@ main > .sheet:last-of-type{margin-bottom:var(--sep)}
 
 /* ---------------- Werkzeug-Showcase (Blatt Automatisierung) ----------------
    Eine aktive Aufnahme im A4-Raster: 166 mm Video, 86 mm Text, darunter
-   die Werkzeugleiste. Im Druck ersetzt ein Raster aller acht Standbilder
-   den Player. */
+   die Werkzeugleiste und die MoGo-Bibliothek. Im Druck ersetzt ein Raster
+   aller sieben Standbilder den Player. */
 .showcase{position:absolute;left:0;top:43mm;width:261mm;
   display:grid;grid-template-columns:166mm 86mm;gap:9mm;align-items:start}
 .showcase-media{position:relative;width:166mm;aspect-ratio:16/9;
   background:#1A1C20;border:.25mm solid var(--g80);overflow:hidden}
 .showcase-media video{display:block;width:100%;height:100%;object-fit:contain}
-.showcase-media video[hidden],.showcase-unavailable[hidden]{display:none!important}
-.showcase-unavailable{position:absolute;inset:6mm;display:flex;align-items:center;justify-content:center;
-  border:.25mm dashed var(--g60)}
 .showcase-info{min-width:0;border-top:.75mm solid var(--signal);padding-top:3mm}
 .tool-detail[hidden]{display:none!important}
-.tool-count{font:500 8pt var(--mono);letter-spacing:.12em;color:var(--signal)}
 .tool-detail h2{font:500 17pt/1.05 var(--arc);letter-spacing:-.02em;color:var(--papier);
-  margin:5mm 0 2mm;overflow-wrap:anywhere}
+  margin:1mm 0 2mm;overflow-wrap:anywhere}
 .tool-category{font:500 7pt/1.3 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--g40)}
 .tool-facts{margin-top:6mm}
 .tool-facts dt{font:400 6pt var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--g50);
@@ -508,14 +504,8 @@ main > .sheet:last-of-type{margin-bottom:var(--sep)}
 .tool-tags{display:flex;flex-wrap:wrap;gap:1.5mm;margin-top:6mm}
 .tool-tags span{border:1px solid var(--g60);padding:1mm 1.8mm;color:var(--g20);
   font:400 6pt/1.2 var(--mono);letter-spacing:.04em}
-.showcase-controls{position:absolute;left:0;top:139mm;width:166mm;
-  display:flex;align-items:center;justify-content:space-between}
-.tool-arrow{border:1px solid var(--g60);background:transparent;color:var(--papier);
-  font:500 7pt var(--mono);letter-spacing:.04em;padding:2mm 3mm;min-height:10mm;cursor:pointer}
-.tool-arrow:hover,.tool-arrow:focus-visible{border-color:var(--signal);color:#fff}
-.showcase-status{font:500 7pt var(--mono);letter-spacing:.12em;color:var(--g40)}
-.tool-nav{position:absolute;left:0;top:154mm;width:261mm;display:grid;
-  grid-template-columns:repeat(8,minmax(0,1fr));border-top:1px solid var(--g60)}
+.tool-nav{position:absolute;left:0;top:140mm;width:261mm;display:grid;
+  grid-template-columns:repeat(7,minmax(0,1fr));border-top:1px solid var(--g60)}
 .tool-nav-button{min-width:0;min-height:14mm;border:0;border-left:1px solid var(--g80);
   background:transparent;color:var(--g40);text-align:left;padding:2.5mm 1.7mm;
   font:500 6pt/1.45 var(--mono);cursor:pointer}
@@ -526,13 +516,24 @@ main > .sheet:last-of-type{margin-bottom:var(--sep)}
 .tool-nav-button[aria-current="true"] span{color:#fff}
 .tool-print-grid{display:none}
 
+/* MoGo Revit Extension — eigene Bibliothek, als Leiste unter den Werkzeugen */
+.mogo{position:absolute;left:0;top:157mm;width:261mm;height:12.5mm;padding:0 4mm;
+  display:grid;grid-template-columns:58mm minmax(0,1fr) auto auto;gap:6mm;align-items:center;
+  border:.25mm solid var(--g80);border-left:.75mm solid var(--signal)}
+.mogo-k{display:block;font:400 5.5pt var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--g40)}
+.mogo h3{font:500 11pt/1.1 var(--arc);letter-spacing:-.01em;color:var(--papier);margin-top:1mm}
+.mogo-txt{font:400 7.5pt/1.4 var(--int);color:var(--g20)}
+.mogo-code{font:400 6.5pt var(--mono);color:var(--signal);background:#1A1C20;padding:1.5mm 2.5mm;white-space:nowrap}
+.mogo-links{display:flex;flex-direction:column;gap:1.2mm}
+.mogo-links a{font:500 6.5pt var(--mono);letter-spacing:.04em;color:var(--papier);text-decoration:none;
+  border-bottom:1px solid var(--g60);transition:border-color .18s}
+.mogo-links a:hover,.mogo-links a:focus-visible{border-bottom-color:var(--signal)}
+
 @media screen and (max-width:899px){
   #automation .showcase{width:100%!important;display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
   #automation .showcase-media{width:100%;height:auto;aspect-ratio:16/9}
-  #automation .showcase-unavailable{inset:14px}
   #automation .showcase-info{padding-top:14px}
   #automation .tool-detail h2{font-size:22pt;margin:14px 0 7px}
-  #automation .tool-count{font-size:11pt}
   #automation .tool-category{font-size:10pt}
   #automation .tool-facts{margin-top:16px}
   #automation .tool-facts dt{font-size:8.5pt;margin-top:12px}
@@ -540,24 +541,25 @@ main > .sheet:last-of-type{margin-bottom:var(--sep)}
   #automation .tool-facts dd{font-size:11pt;margin-top:3px}
   #automation .tool-tags{margin-top:18px;gap:6px}
   #automation .tool-tags span{font-size:9pt;padding:5px 8px}
-  #automation .showcase-controls{width:100%!important;margin-top:8px!important}
-  #automation .tool-arrow{font-size:10pt;min-height:44px;padding:8px 12px}
-  #automation .showcase-status{font-size:10pt}
   #automation .tool-nav{display:flex;overflow-x:auto;overscroll-behavior-inline:contain;
     max-width:100%!important;scrollbar-width:thin;margin-bottom:0!important}
   #automation .tool-nav-button{flex:0 0 auto;min-width:108px;min-height:48px;
     font-size:9pt;padding:8px 10px}
+  #automation .mogo{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;padding:16px!important;
+    margin-top:26px!important}
+  #automation .mogo-k{font-size:8.5pt}
+  #automation .mogo h3{font-size:16pt;margin-top:4px}
+  #automation .mogo-txt{font-size:11pt;line-height:1.55}
+  #automation .mogo-code{font-size:9pt;padding:8px 10px;white-space:normal;overflow-wrap:anywhere}
+  #automation .mogo-links{flex-direction:row;flex-wrap:wrap;gap:8px 20px}
+  #automation .mogo-links a{font-size:10pt;padding:6px 0}
 }
 
 @media print{
-  #automation .showcase,#automation .showcase-controls,#automation .tool-nav{display:none!important}
+  #automation .showcase,#automation .tool-nav{display:none!important}
   #automation .tool-print-grid{display:grid;position:absolute;left:0;top:43mm;width:261mm;
     grid-template-columns:repeat(4,minmax(0,1fr));gap:8mm 5mm}
-  .tool-print-grid img,.tool-print-empty{display:block;width:100%;aspect-ratio:16/9;
-    object-fit:contain;background:#1A1C20}
-  .tool-print-empty{display:flex;align-items:center;justify-content:center;
-    border:.25mm dashed var(--g60);background:transparent;
-    font:400 6pt var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--g40)}
+  .tool-print-grid img{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#1A1C20}
   .tool-print-grid figcaption{margin-top:2mm;font:500 7pt/1.45 var(--mono);letter-spacing:.06em;color:var(--papier)}
   .tool-print-grid figcaption > span:last-child{font-weight:400;font-size:6pt;letter-spacing:.08em;
     text-transform:uppercase;color:var(--g40)}
